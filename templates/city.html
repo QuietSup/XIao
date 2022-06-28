@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Acme&family=Comfortaa:wght@500&family=Klee+One:wght@600&display=swap" rel="stylesheet">
+    <title>{{ city }}</title>
+</head>
+<body>
+<nav class="container">
+    <a class="logo" href="/">Xiao</a>
+    <button>
+    <a href="/add">
+        <span>
+            Додати
+        </span>
+    </a>
+    </button>
+</nav>
+
+    {% set index = [2, 3, 11, 5, 6, 7, 8, 9] %}
+
+    <div class="container city_head">
+        <span></span>
+        <h1>
+            {{ city }}
+        </h1>
+        <button>
+    <a href="/{{ city }}/interpolate">
+        <span>
+            Відновити дані
+        </span>
+    </a>
+    </button>
+    </div>
+
+<table style="width:100%">
+  <tr id="header">
+      <td>
+          Час
+          <div class="tip">
+              <span>Час спостерігання</span>
+          </div>
+      </td>
+    <td>
+        Температура
+        <div class="tip">
+              <span>Температура повітря на висоті 2м (С)</span>
+          </div>
+    </td>
+    <td>
+        Напрям вітру
+        <div class="tip">
+              <span>Напрям вітру на висоті 10м</span>
+          </div>
+    </td>
+    <td>
+        Шв. вітру
+        <div class="tip">
+              <span>Середня швидкість вітру на висоті 10м</span>
+          </div>
+    </td>
+    <td>
+        Хмарність
+        <div class="tip">
+              <span>Кількість хмар</span>
+          </div>
+    </td>
+    <td>
+        Видимість
+        <div class="tip">
+              <span>Метеорологічна дальність видимості (км)</span>
+          </div>
+    </td>
+    <td>
+        Тиск
+        <div class="tip">
+              <span>Атмосферний тиск на рівні моря (гПа)</span>
+          </div>
+    </td>
+    <td>
+        Нижня межа
+        <div class="tip">
+              <span>Нижня межа хмарності</span>
+          </div>
+    </td>
+  </tr>
+
+{% for row in data %}
+    <tr>
+    {% for i in index %}
+        {% if row[i] == None %}
+            <td style="background-color: rgba(170,6,100,0.1);"></td>
+        {% else %}
+            <td>{{ row[i] }}</td>
+        {% endif %}
+    {% endfor %}
+     </tr>
+{% endfor %}
+</table>
+
+
+
+</body>
+</html>

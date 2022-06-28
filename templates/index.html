@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Comfortaa:wght@500&family=Klee+One:wght@600&display=swap" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+<nav class="container">
+    <a class="logo" href="/">Xiao</a>
+    <button>
+    <a href="/add">
+        <span>
+            Додати
+        </span>
+    </a>
+    </button>
+</nav>
+
+<div class="container">
+
+<div class="cities">
+{% for city in cities %}
+    <a class="city" href="/{{ city[0] }}"><span>{{ city[0] }}</span></a>
+{% endfor %}
+</div>
+
+
+</div>
+</body>
+</html>
