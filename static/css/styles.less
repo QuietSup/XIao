@@ -11,6 +11,44 @@ html{
     min-height: 100vh;
     //width: 100%;
 }
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  justify-content: left;
+  margin-bottom: 40px;
+  button{
+    border: none;
+    background: none;
+  }
+  form{
+    padding: 0;
+    width: 100px;
+    margin: 0;
+    position: absolute;
+    right: 0;
+
+  }
+
+   button>a{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-decoration: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: sans-serif;
+    align-self: center;
+    background: linear-gradient(to left bottom, #67b26f, #4ca2cd);
+  }
+  button>a:hover{
+    background: linear-gradient(to right top, #67b26f, #4ca2cd);
+  }
+}
+
 .city_head{
   position: relative;
   display: flex;

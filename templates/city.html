@@ -19,6 +19,42 @@
     </button>
 </nav>
 
+<div class="container buttons">
+    <button>
+            <a href="/{{ city }}/temperature">
+                <span>
+                    Тепературні умови
+                </span>
+            </a>
+    </button>
+
+    <button>
+            <a href="/{{ city }}/temperature-time">
+                <span>
+                    Тривалість температури
+                </span>
+            </a>
+    </button>
+
+    <button>
+            <a href="/{{ city }}/windrose">
+                <span>
+                    Роза вітрів
+                </span>
+            </a>
+    </button>
+    <form action="/{{ city }}/report" method="post">
+    <button >
+            <a>
+                <span>
+                    Звіт
+                </span>
+            </a>
+    </button>
+    </form>
+
+</div>
+
     {% set index = [2, 3, 11, 5, 6, 7, 8, 9] %}
 
     <div class="container city_head">
@@ -27,12 +63,12 @@
             {{ city }}
         </h1>
         <button>
-    <a href="/{{ city }}/interpolate">
-        <span>
-            Відновити дані
-        </span>
-    </a>
-    </button>
+            <a href="/{{ city }}/interpolate">
+                <span>
+                    Відновити дані
+                </span>
+            </a>
+        </button>
     </div>
 
 <table style="width:100%">
